@@ -24,10 +24,6 @@ login(model: any)
 
 register(model:any)
 {
-  return this.http.post(this.baseUrl + "register", model).pipe(
-    map((response: any)=>{
-      console.log(response);
-    })
-  )
+  return this.http.post(this.baseUrl + "register", model);
 }
 }
