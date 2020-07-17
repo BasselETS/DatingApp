@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AlertifyServiceService } from '../_services/AlertifyService.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 registerMode = false;
+values: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private alertify:AlertifyServiceService) { }
 
   ngOnInit() {
+    this.getBooks();
   }
 
   registerToggle()
@@ -22,6 +25,20 @@ registerMode = false;
   cancelRegisterMode(registerMode: boolean)
   {
     this.registerMode = registerMode;
+  }
+
+  getBooks()
+  {
+    const headers = new HttpHeaders()
+  .set('content-type', 'application/json')
+  .set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+
+    this.http.get('http://localhost:5000/api/values', { 'headers': headers }).subscribe(res=>{
+      this.values = res;
+      // this.alertify.success(this.values);
+    }, error =>{
+      // this.alertify.error(error);
+    });
   }
 
 }
