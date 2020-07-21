@@ -8,8 +8,6 @@ namespace DatingApp.API.Dtos
     {
                 public int Id { get; set; }
         public string Username { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
 
         public string Genter { get; set; }
         public int Age { get; set; }
