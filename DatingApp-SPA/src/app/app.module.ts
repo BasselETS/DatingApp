@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FileUploadModule } from 'ng2-file-upload';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
@@ -52,12 +53,15 @@ export function tokenGetter()
    ],
    imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       BsDropdownModule.forRoot(),
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
+      BsDatepickerModule.forRoot(),
       NgxGalleryModule,
       FileUploadModule,
       JwtModule.forRoot({
