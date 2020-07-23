@@ -9,6 +9,7 @@ import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { NavComponent } from './nav/nav.component';
 import {AuthService} from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
@@ -31,6 +32,7 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import {PaginationModule} from 'ngx-bootstrap/pagination';
 
 @Pipe({
    name: 'timeAgo',
@@ -62,10 +64,12 @@ export function tokenGetter()
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
+      ButtonsModule.forRoot(),
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
       BsDropdownModule.forRoot(),
+      PaginationModule.forRoot(),
       BrowserAnimationsModule,
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
