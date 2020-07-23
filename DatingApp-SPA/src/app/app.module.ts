@@ -33,6 +33,7 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import {TimeAgoPipe} from 'time-ago-pipe';
 import {PaginationModule} from 'ngx-bootstrap/pagination';
+import { ListsResolver } from './_resolvers/list.resolver';
 
 @Pipe({
    name: 'timeAgo',
@@ -90,6 +91,7 @@ export function tokenGetter()
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver,
+      ListsResolver,
       PreventUnsavedChanges
    ],
    bootstrap: [
