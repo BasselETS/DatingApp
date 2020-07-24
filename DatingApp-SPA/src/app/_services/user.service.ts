@@ -125,6 +125,16 @@ sendMessage(id: number, recipientId: number, content: string)
     "content": content
   });
 }
+
+deleteMessage(id: number, userId: number)
+{
+  return this.http.post(this.baseUrl + 'users/' + userId + '/messages/' + id, {});
+}
+
+markMessageRead(userId: number,id: number)
+{
+  return this.http.post(this.baseUrl + 'users/' + userId + '/messages/' + id + '/read', {}).subscribe();
+}
 }
 
 
