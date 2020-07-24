@@ -5,6 +5,7 @@ import { UserService } from '../_services/user.service';
 import { AuthService } from '../_services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { AlertifyServiceService } from '../_services/AlertifyService.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-messages',
@@ -42,6 +43,16 @@ messageContainer = 'Unread';
   {
     this.pagination.currentPage = event.page;
     this.loadMessages();
+  }
+
+  deleteMessage(id: number)
+  {
+    this.alertify.confirm('Are you sure do you want to delete the message', ()=>{
+      this.userService.deleteMessage(id, this.authService.decodedToken.nameid).subscribe(()=>{
+        this.messages.splice(this.messages.findIndex(i => i.id == id),1);
+        this.alertify.success('Message has been deleted');
+      })
+    })
   }
 
 }
