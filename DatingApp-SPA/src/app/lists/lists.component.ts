@@ -55,4 +55,15 @@ userParams: any = {};
     });
   }
 
+  resetFilters(){
+    this.userParams.gender = this.user.gender == 'male' ? 'female' : 'male';
+    this.userParams.minAge = 18;
+    this.userParams.maxAge = 99;
+    this.userParams.orderBy = 'lastActive';
+
+    this.likesParam = 'Likers';
+
+    this.loadUsers();
+  }
+
 }

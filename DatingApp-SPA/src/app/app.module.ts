@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Pipe } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FileUploadModule } from 'ng2-file-upload';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
@@ -18,6 +21,7 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MemberListComponent } from './members/member-list/member-list.component';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
@@ -34,6 +38,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import {TimeAgoPipe} from 'time-ago-pipe';
 import {PaginationModule} from 'ngx-bootstrap/pagination';
 import { ListsResolver } from './_resolvers/list.resolver';
+import { MessageResolver } from './_resolvers/message.resolver';
 
 @Pipe({
    name: 'timeAgo',
@@ -60,7 +65,8 @@ export function tokenGetter()
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      TimeAgoExtendsPipe
+      TimeAgoExtendsPipe,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -69,6 +75,7 @@ export function tokenGetter()
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
+      CommonModule,
       BsDropdownModule.forRoot(),
       PaginationModule.forRoot(),
       BrowserAnimationsModule,
@@ -92,7 +99,8 @@ export function tokenGetter()
       MemberListResolver,
       MemberEditResolver,
       ListsResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      MessageResolver
    ],
    bootstrap: [
       AppComponent
