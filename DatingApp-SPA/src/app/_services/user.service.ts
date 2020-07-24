@@ -135,6 +135,11 @@ markMessageRead(userId: number,id: number)
 {
   return this.http.post(this.baseUrl + 'users/' + userId + '/messages/' + id + '/read', {}).subscribe();
 }
+
+getUnreadMessages(userId: number)
+{
+  return this.http.get(this.baseUrl + 'users/' + userId + '/unreadMessages');
+}
 }
 
 

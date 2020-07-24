@@ -102,5 +102,16 @@ namespace DatingApp.API.Controllers
             return BadRequest("Could not proceed with the Like");
         }
 
+        [HttpGet("{id}/unreadMessages")]
+        public async Task<IActionResult> GetUnreadMessages(int id)
+        {
+            if(id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            return Unauthorized();
+
+            var messagesCount = await _repo.GetUnreadMessagesCount(id);
+
+            return Ok(messagesCount);
+        }
+
     }
 }

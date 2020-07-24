@@ -33,13 +33,13 @@ messageContent = "";
           if(messages[i].isRead === false && messages[i].recipientId === currentUserId)
           {
             this.userService.markMessageRead(currentUserId, messages[i].id);
+            this.authservice.unreadMessagesCount.next(this.authservice.unreadMessagesCount.value - 1);
           }
         }
       })
     )
     .subscribe(messages => {
       this.messages = messages;
-      console.log(messages);
     }, error => {
       this.alertify.error(error);
     });

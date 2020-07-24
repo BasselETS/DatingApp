@@ -23,5 +23,6 @@ namespace DatingApp.API.Data
          Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
 
          Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
+         Task<int> GetUnreadMessagesCount(int userId);
     }
 }

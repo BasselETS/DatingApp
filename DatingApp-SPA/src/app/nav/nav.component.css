@@ -7,3 +7,23 @@ img {
     border: 2px solid white;
     display: inline;
 }
+
+.notificationCircle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
+.centered {
+    position: absolute;
+    top: 45%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }

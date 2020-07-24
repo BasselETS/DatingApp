@@ -17,6 +17,7 @@ decodedToken: any;
 
 currentUser: User;
 photoUrl = new BehaviorSubject<string>('../../assets/user.png');
+unreadMessagesCount = new BehaviorSubject<number>(0);
 currentPhotoUrl = this.photoUrl.asObservable();
 
 constructor(private http:HttpClient) { }

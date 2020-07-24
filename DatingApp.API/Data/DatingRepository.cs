@@ -151,5 +151,12 @@ namespace DatingApp.API.Data
               m.RecipientId == recipientId && m.SenderId == userId && m.SenderDeleted == false).OrderByDescending(m => m.MessageSent).ToListAsync();
             return messages;
         }
+
+        public async Task<int> GetUnreadMessagesCount(int userId)
+        {
+            var unreadMessages = await _context.Messages.CountAsync(m => m.IsRead == false && m.RecipientId == userId);
+            return unreadMessages;
+
+        }  
     }
 }
