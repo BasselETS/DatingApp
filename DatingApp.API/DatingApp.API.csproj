@@ -5,7 +5,7 @@
     <UpgradeBackupLocation>D:\Eurisko\Web App Projects\Dating App\DatingApp\DatingApp.API\Backup1\</UpgradeBackupLocation>
     <OldToolsVersion>Current</OldToolsVersion>
   </PropertyGroup>
-  <ItemGroup>&#xD;
+  <ItemGroup>&#xD;&#xD;
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0"/>
@@ -17,5 +17,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0"/>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0"/>
     <PackageReference Include="CloudinaryDotNet" Version="1.11.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0"/>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.0.0"/>
   </ItemGroup>
 </Project>

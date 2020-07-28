@@ -33,12 +33,6 @@ values: any;
   .set('content-type', 'application/json')
   .set('Authorization', 'Bearer ' + localStorage.getItem('token'));
 
-    this.http.get('http://localhost:5000/api/values', { 'headers': headers }).subscribe(res=>{
-      this.values = res;
-      // this.alertify.success(this.values);
-    }, error =>{
-      // this.alertify.error(error);
-    });
   }
 
 }

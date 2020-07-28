@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
 import { AuthService } from 'src/app/_services/auth.service';
-
+//
 @Component({
   selector: 'app-member-detail',
   templateUrl: './member-detail.component.html',
